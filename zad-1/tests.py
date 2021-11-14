@@ -16,19 +16,19 @@ class HammingTest(unittest.TestCase):
 	
 	def test_long_different_strands(self):
 		self.assertEqual(hammingDistance("GGACGGATTCTG", "AGGACGGATTCT"), 9)
-	@unittest.skip("Not implemented yet")
+	
 	def test_disallow_first_strand_longer(self):
 		with self.assertRaisesWithMessage(ValueError):
 			hammingDistance("AATG", "AAA")
-	@unittest.skip("Not implemented yet")
+
 	def test_disallow_second_strand_longer(self):
 		with self.assertRaisesWithMessage(ValueError):
 			hammingDistance("ATA", "AGTG")
-	@unittest.skip("Not implemented yet")
+
 	def test_disallow_left_empty_strand(self):
 		with self.assertRaisesWithMessage(ValueError):
 			hammingDistance("", "G")
-	@unittest.skip("Not implemented yet")
+
 	def test_disallow_right_empty_strand(self):
 		with self.assertRaisesWithMessage(ValueError):
 			hammingDistance("G", "")
