@@ -7,13 +7,13 @@ class HammingTest(unittest.TestCase):
 	
 	def test_single_letter_identical_strands(self):
 		self.assertEqual(hammingDistance("A", "A"), 0)
-	@unittest.skip("Not implemented yet")
+	
 	def test_single_letter_different_strands(self):
 		self.assertEqual(hammingDistance("G", "T"), 1)
-	@unittest.skip("Not implemented yet")
+	
 	def test_long_identical_strands(self):
 		self.assertEqual(hammingDistance("GGACTGAAATCTG", "GGACTGAAATCTG"), 0)
-	@unittest.skip("Not implemented yet")
+	
 	def test_long_different_strands(self):
 		self.assertEqual(hammingDistance("GGACGGATTCTG", "AGGACGGATTCT"), 9)
 	@unittest.skip("Not implemented yet")
