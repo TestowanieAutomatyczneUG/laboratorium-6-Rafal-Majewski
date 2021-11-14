@@ -4,7 +4,7 @@ from hammingDistance import hammingDistance
 class HammingTest(unittest.TestCase):
 	def test_empty_strands(self):
 		self.assertEqual(hammingDistance("", ""), 0)
-	@unittest.skip("Not implemented yet")
+	
 	def test_single_letter_identical_strands(self):
 		self.assertEqual(hammingDistance("A", "A"), 0)
 	@unittest.skip("Not implemented yet")
