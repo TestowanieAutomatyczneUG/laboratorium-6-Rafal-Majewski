@@ -26,4 +26,6 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run tests for exercise 1
         run: python zad-1/tests.py
+      - name: Run tests for exercise 2
+        run: python zad-2/tests.py
 
