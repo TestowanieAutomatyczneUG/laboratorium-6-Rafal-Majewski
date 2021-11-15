@@ -1,11 +1,12 @@
-def roman(number: int) -> str:
-	if number >= 4:
-		if number == 4:
+def romanMinus(number: int) -> str:
+	for d in [10, 5]:
+		if (number + 1) % d == 0:
 			return "I"+roman(number+1)
-		return "V"+roman(number-5)
-	return "I"*number
 
+def roman(number: int) -> str:
+	if number == 0:
+		return ""
+	if number == 5:
+		return "V"
+	return romanMinus(number) or roman(number-1) + "I"
 
-if __name__ == "__main__":
-	for i in range(1, 51):
-		print(i, roman(i))
