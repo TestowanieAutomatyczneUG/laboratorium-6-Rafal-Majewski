@@ -8,5 +8,13 @@ def roman(number: int) -> str:
 		return ""
 	if number == 5:
 		return "V"
+	if number == 10:
+		return "X"
 	return romanMinus(number) or roman(number-1) + "I"
 
+if __name__ == "__main__":
+	for i in range(0, 20):
+		try:
+			print(i, roman(i))
+		except RecursionError:
+			print(i, "RecursionError")
