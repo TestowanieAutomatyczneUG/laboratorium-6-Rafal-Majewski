@@ -24,7 +24,9 @@ class Song:
 			return self.__song[lineNumber-1]
 		except:
 			raise IndexError("No such line")
-	def getLines(self, startLineNumber: int, endLineNumber: int) -> list[str]:
+	def getLines(self, startLineNumber: int = None, endLineNumber: int = None) -> list[str]:
+		startLineNumber = 1 if startLineNumber is None else startLineNumber
+		endLineNumber = len(self.__song) if endLineNumber is None else endLineNumber
 		try:
 			if endLineNumber < startLineNumber:
 				raise ValueError("End line number cannot be smaller than start line number")
