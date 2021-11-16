@@ -28,10 +28,10 @@ class Song:
 		startLineNumber = 1 if startLineNumber is None else startLineNumber
 		endLineNumber = len(self.__song) if endLineNumber is None else endLineNumber
 		try:
-			if endLineNumber < startLineNumber:
-				raise ValueError("End line number cannot be smaller than start line number")
 			if startLineNumber < 1 or endLineNumber < 1 or startLineNumber > len(self.__song) or endLineNumber > len(self.__song):
 				raise IndexError
+			if endLineNumber < startLineNumber:
+				raise ValueError("End line number cannot be smaller than start line number")
 			return self.__song[startLineNumber-1:endLineNumber]
 		except IndexError:
 			raise IndexError("No such line")

@@ -19,7 +19,7 @@ class SongTest(unittest.TestCase):
 		self.assertEqual(self.song.getLines(1, 1), ["On the first day of Christmas my true love gave to me: a Partridge in a Pear Tree."])
 
 	def test_getLines_1_to_minus_10(self):
-		self.assertRaises(ValueError, self.song.getLines, 1, -10)
+		self.assertRaises(IndexError, self.song.getLines, 1, -10)
 	
 	def test_getLines_2_to_3(self):
 		self.assertEqual(self.song.getLines(2, 3), [
@@ -35,6 +35,16 @@ class SongTest(unittest.TestCase):
 			"On the first day of Christmas my true love gave to me: a Partridge in a Pear Tree.",
 			"On the second day of Christmas my true love gave to me: two Turtle Doves, and a Partridge in a Pear Tree.",
 			"On the third day of Christmas my true love gave to me: three French Hens, two Turtle Doves, and a Partridge in a Pear Tree."
+		])
+
+	def test_getLines_from_13(self):
+		self.assertRaises(IndexError, self.song.getLines, startLineNumber = 13)
+
+	def test_getLines_from_10(self):
+		self.assertEqual(self.song.getLines(startLineNumber = 10), [
+			"On the tenth day of Christmas my true love gave to me: ten Lords-a-Leaping, nine Ladies Dancing, eight Maids-a-Milking, seven Swans-a-Swimming, six Geese-a-Laying, five Gold Rings, four Calling Birds, three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.",
+			"On the eleventh day of Christmas my true love gave to me: eleven Pipers Piping, ten Lords-a-Leaping, nine Ladies Dancing, eight Maids-a-Milking, seven Swans-a-Swimming, six Geese-a-Laying, five Gold Rings, four Calling Birds, three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.",
+			"On the twelfth day of Christmas my true love gave to me: twelve Drummers Drumming, eleven Pipers Piping, ten Lords-a-Leaping, nine Ladies Dancing, eight Maids-a-Milking, seven Swans-a-Swimming, six Geese-a-Laying, five Gold Rings, four Calling Birds, three French Hens, two Turtle Doves, and a Partridge in a Pear Tree."
 		])
 
 	def tearDown(self):
