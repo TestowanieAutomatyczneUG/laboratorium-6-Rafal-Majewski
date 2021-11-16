@@ -37,3 +37,5 @@ class Song:
 			raise IndexError("No such line")
 		except Exception as exception:
 			raise exception
+	def getAllLines(self) -> list[str]:
+		return self.__song
