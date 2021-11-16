@@ -28,4 +28,6 @@ jobs:
         run: python zad-1/tests.py
       - name: Run tests for exercise 2
         run: python zad-2/tests.py
+      - name: Run tests for exercise 3
+        run: python zad-3/tests.py
 
