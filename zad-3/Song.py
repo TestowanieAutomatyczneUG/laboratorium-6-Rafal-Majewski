@@ -17,10 +17,17 @@ class Song:
 			""".split("\n")
 		] if strippedLine
 	]
-	def getLine(self, number: int):
+	def getLine(self, lineNumber: int) -> str:
 		try:
-			if number < 1:
-				raise IndexError("No such line")
-			return self.__song[number-1]
+			if lineNumber < 1:
+				raise IndexError
+			return self.__song[lineNumber-1]
+		except:
+			raise IndexError("No such line")
+	def getLines(self, startLineNumber: int, endLineNumber: int) -> list[str]:
+		try:
+			if startLineNumber < 1 or endLineNumber < 1:
+				raise IndexError
+			return self.__song[startLineNumber-1:endLineNumber]
 		except:
 			raise IndexError("No such line")
