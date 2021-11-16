@@ -17,3 +17,5 @@ class Song:
 			""".split("\n")
 		] if strippedLine
 	]
+	def getLine(self, number):
+		return self.__song[number]
