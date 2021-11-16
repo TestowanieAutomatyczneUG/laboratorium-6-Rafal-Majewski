@@ -10,6 +10,8 @@ class SongTest(unittest.TestCase):
 		self.assertRaises(IndexError, self.song.getLine, 200)
 	def test_getLine_0(self):
 		self.assertRaises(IndexError, self.song.getLine, 0)
+	def test_getLine_2_dot_5(self):
+		self.assertRaises(IndexError, self.song.getLine, 2.5)
 	def tearDown(self):
 		self.song = None
 
