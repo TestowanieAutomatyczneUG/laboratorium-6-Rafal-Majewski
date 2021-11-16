@@ -20,13 +20,5 @@ def roman(number: int) -> str:
 			result += symbol
 			number -= value
 	return result
-	
-	
 
-if __name__ == "__main__":
-	for i in range(0, 10):
-		try:
-			print(i, roman(i))
-		except RecursionError:
-			print(i, "RecursionError")
 
