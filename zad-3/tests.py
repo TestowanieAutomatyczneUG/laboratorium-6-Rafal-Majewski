@@ -27,7 +27,8 @@ class SongTest(unittest.TestCase):
 			"On the third day of Christmas my true love gave to me: three French Hens, two Turtle Doves, and a Partridge in a Pear Tree."
 		])
 	
-
+	def test_getLines_14_to_20(self):
+		self.assertRaises(IndexError, self.song.getLines, 14, 20)
 
 	def tearDown(self):
 		self.song = None
