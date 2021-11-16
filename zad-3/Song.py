@@ -1,5 +1,5 @@
 class Song:
-	song=[
+	__song=[
 		strippedLine for strippedLine in [
 			line.strip() for line in """
 				On the first day of Christmas my true love gave to me: a Partridge in a Pear Tree.
