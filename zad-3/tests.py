@@ -8,6 +8,8 @@ class SongTest(unittest.TestCase):
 		self.assertEqual(self.song.getLine(1), "On the first day of Christmas my true love gave to me: a Partridge in a Pear Tree.")
 	def test_getLine_200(self):
 		self.assertRaises(IndexError, self.song.getLine, 200)
+	def test_getLine_0(self):
+		self.assertRaises(IndexError, self.song.getLine, 0)
 	def tearDown(self):
 		self.song = None
 
