@@ -18,4 +18,4 @@ class Song:
 		] if strippedLine
 	]
 	def getLine(self, number):
-		return self.__song[number]
+		return self.__song[number-1]
