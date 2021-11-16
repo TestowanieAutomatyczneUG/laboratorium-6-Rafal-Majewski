@@ -18,6 +18,17 @@ class SongTest(unittest.TestCase):
 	def test_getLines_1_to_1(self):
 		self.assertEqual(self.song.getLines(1, 1), ["On the first day of Christmas my true love gave to me: a Partridge in a Pear Tree."])
 
+	def test_getLines_1_to_minus_10(self):
+		self.assertRaises(IndexError, self.song.getLines, 1, -10)
+	
+	def test_getLines_2_to_3(self):
+		self.assertEqual(self.song.getLines(2, 3), [
+			"On the second day of Christmas my true love gave to me: two Turtle Doves, and a Partridge in a Pear Tree.",
+			"On the third day of Christmas my true love gave to me: three French Hens, two Turtle Doves, and a Partridge in a Pear Tree."
+		])
+	
+
+
 	def tearDown(self):
 		self.song = None
 
